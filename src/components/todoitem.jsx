@@ -11,8 +11,10 @@ function TodoComponent ({todo, selectTodo, removeTodo, editTodoChange, editTodo}
                 </div>            
                 
                 <span> 
-                    <input value={todo.title} onChange={e => editTodoChange(todo.id, e)} className=' rounded-md bg-zinc-600 w-full' />
-                    
+                    <input value={todo.title} 
+                    onKeyDown={e => e.key === 'Enter' && editTodo(todo.id)}
+                    onChange={e => editTodoChange(todo.id, e)}
+                    className=' rounded-md bg-zinc-600 w-full' />
                 </span>
                 
             </span>
